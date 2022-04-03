@@ -26,7 +26,7 @@
             width: 100%;
         }
         .card-col{
-          background-color: aliceblue;
+          background-color: #222;
            width: 100%;
            
         }
@@ -52,7 +52,7 @@
                 <textarea id="copycode" cols="30" rows="5"></textarea> <br>
                  
                 <label for="script"> Add this script tag head/body</label> <br>
-                <textarea name="" id="" cols="30" rows="5"><script src="https://cdn.jsdelivr.net/gh/reboot13-git/github-card/github-data.js" defer></script></textarea>
+                <textarea name="" id="" cols="30" rows="5"><script src="https://cdn.jsdelivr.net/gh/reboot13-git/github-profile-card/github-data.js" defer></script></textarea>
         </div>
         <div class="col card-col">
             <div class="git-code">
@@ -81,7 +81,9 @@
           displayCode = ` <div class="gcard" data-github-username="${gUsername.value}" id="github-card" data-card-color="${color.value}"></div>
           `
        }
+       displayCodes()
        function getCode(){
+        displayCodes()
             console.log(color.value)
            document.getElementById("github-card").setAttribute("data-card-color", color.value)
            document.getElementById("github-card").setAttribute("data-github-username", gUsername.value)
@@ -214,6 +216,7 @@ info = `
             `
             displayCard()
             document.getElementById("copycode").value = displayCode
+            displayCodes()
      
 
 })
